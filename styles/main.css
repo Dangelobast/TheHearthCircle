@@ -66,6 +66,7 @@ body{
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 0 1rem;
   
 }
 
@@ -79,9 +80,58 @@ body{
   border-radius: 40px;
 }
 
+@media (max-width: 100em) {
+  .nav-container{
+    width: 85%;
+  }
+ 
+}
+@media (max-width:75em){
+  .hero-text h1{
+    font-size: 3.7vw;
+  }
 
+}
+@media (max-width:29em){
+.header-container{
 
+}
+.logo{order:1;
+  width: 10rem;
+}
+.nav-container{order:3;
+width: 100%;
+border-radius: 0px;
+}
+.hero-text{order:2;
+}
+.hero-text h1{
+  border-radius: 0px;
+  font-size: 5.5vw;
+}
+.nav-list-container{
+  gap:1.5rem;
+  
+}
 
+}
+@media (max-width:21em)
+{
+  .nav-list-container{
+    gap:5%;
+  }
+  .nav-container{
+    font-size: .8rem;
+  }
+  .hero-text h1{
+    padding: 3rem 2rem;
+  }
+}
+@media (max-width:16em){
+  .nav-container{
+    padding:1rem 0rem;
+  }
+}
 
 
 
