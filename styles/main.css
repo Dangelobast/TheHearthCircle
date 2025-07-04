@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @font-face {
     font-family: "Inter";
     src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
@@ -58,6 +63,25 @@ body{
   color: #E4E4E4;
   text-decoration: none;
   font-weight: 500;
+
+  /* Animation */
+  position: relative;
+}
+.nav-list-container a::before {
+  content: '';
+  position: absolute;
+ width: 0;
+ height: 0;
+ border-left: 10px solid transparent;
+ border-right: 10px solid transparent;
+ border-bottom: 10px solid #E4E4E4;
+ top:130%;
+ left:50%;
+ transform: translateX(-50%) scaleY(0);
+ transition:transform 0.3s ease-in-out;
+}
+.nav-list-container a:hover::before {
+  transform: translateX(-50%) scaleY(1);
 }
 
 .hero-text {
@@ -78,6 +102,7 @@ body{
   background-color: rgba(58, 55, 55, 0.74);
   padding: 2rem 4rem;
   border-radius: 40px;
+  animation: fadeIn 4s;
 }
 
 @media (max-width: 100em) {
