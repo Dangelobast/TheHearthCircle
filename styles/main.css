@@ -2,13 +2,19 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
+.fade-in {
+  animation: fadeIn 4s forwards;
+}
+/*Understand why forwards is needed and how it affects the animation */
 @font-face {
     font-family: "Inter";
     src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
 :root{
  --var--violet: hsl(257, 40%, 49%);
+}
+html{
+  scroll-behavior: smooth;
 }
 *, *::after, *::before{
     margin: 0;
@@ -18,6 +24,8 @@
 body{
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    background-color: rgba(58, 55, 55, 0.74);
+    
 }
 
 .background-video {
@@ -27,6 +35,8 @@ body{
   position: absolute;
   top: 0;
   left: 0;
+   
+ 
 }
 .video-container{
     z-index: -1;
@@ -37,6 +47,7 @@ body{
   height: 100vh;
   display: flex;
   flex-direction: column;
+  
 }
 
 .logo {
@@ -49,7 +60,9 @@ body{
   padding: 1rem 2rem;
   width: 60%;
   border-radius: 40px;
-  margin: 0 auto;;
+  margin: 0 auto;
+  z-index: 10;
+  
 }
 
 .nav-list-container {
@@ -57,6 +70,7 @@ body{
   justify-content: center;
   gap: 2.5rem;
   list-style: none;
+  
 }
 
 .nav-list-container a {
@@ -102,8 +116,42 @@ body{
   background-color: rgba(58, 55, 55, 0.74);
   padding: 2rem 4rem;
   border-radius: 40px;
-  animation: fadeIn 4s;
+  animation: fadeIn 3s;
 }
+.about{
+  font-weight: 200;
+  
+}
+.about-image{
+  width: 100%;
+  height: 100dvh;;
+  display: block;;
+  object-fit: cover;
+  
+}
+.image-wrapper{
+  position: relative;
+  
+}
+.about-description-one{
+  position:absolute;
+  top: 50%;
+  right: 20%;
+  width: 45%;
+  font-size: 2vw;
+  text-align: center;
+  color:#E4E4E4;
+   background-color: rgba(58, 55, 55, 0.74);
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  opacity: 0;
+  
+  
+}
+.about-description-one em{
+  color: yellowgreen;
+}
+
 
 @media (max-width: 100em) {
   .nav-container{
@@ -117,6 +165,12 @@ body{
   }
 
 }
+@media(max-width:48em){
+  .about-description-one{
+    width:60%;
+    right:10%;
+  }
+}
 @media (max-width:29em){
 .header-container{
 height: 100dvh;
@@ -127,6 +181,8 @@ height: 100dvh;
 .nav-container{order:3;
 width: 100%;
 border-radius: 0px;
+position: fixed;
+bottom:0;
 }
 .hero-text{order:2;
 }
@@ -138,7 +194,17 @@ border-radius: 0px;
   gap:1.5rem;
   
 }
-
+.about-description-one{
+top:50%;
+right:0;
+left:50%;
+transform: translateX(-50%) translateY(-50%);
+  width: 90%;
+  font-size: 4vw;
+  padding: 1rem;
+  border-radius: 0px;
+ font-size: 6vw;
+}
 }
 @media (max-width:21em)
 {
@@ -157,8 +223,6 @@ border-radius: 0px;
     padding:1rem 0rem;
   }
 }
-
-
 
 
 /*
